@@ -1,223 +1,126 @@
 import HeroSection from "@/components/HeroSection";
 import styles from "./page.module.css";
-import { CheckCircle2, FileText, Globe2, Network, MessageSquare, Check, ShieldCheck } from "lucide-react";
+import { LayoutTemplate, Zap, Shield, Check, FileCode2, Palette, Globe, PlayCircle } from "lucide-react";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
 
-      {/* Logo Showcase Section */}
-      <section className={`section ${styles.logoShowcase}`}>
-        <div className="container text-center">
-          <p className="text-muted" style={{ marginBottom: "2rem" }}>TRUSTED BY GLOBAL PARTNERS</p>
-          <div className={styles.logoGrid}>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className={styles.partnerLogo}>
-                <Globe2 className="text-muted" size={32} />
-                <span className="text-muted">Partner Brand {i}</span>
+      {/* Video / Dashboard Preview Section */}
+      <section className="section" style={{ paddingTop: '0' }}>
+        <div className="container">
+          <div className={styles.dashboardPreview}>
+            <div className={styles.dashboardHeader}>
+              <div className={styles.dots}>
+                <span></span><span></span><span></span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className={`section ${styles.aboutSection}`}>
-        <div className={`container ${styles.twoCol}`}>
-          <div>
-            <h2 className="section-title">Our <span className="text-accent">Mission</span></h2>
-            <p className="text-muted" style={{ marginBottom: "1.5rem" }}>
-              At Ever Legit LLC, our mission is to redefine professional business communication and international commercial operations. We believe in transparency, integrity, and building reliable foundations for global enterprises.
-            </p>
-            <p className="text-muted" style={{ marginBottom: "2rem" }}>
-              Operating from Wyoming, United States, we provide a sophisticated infrastructure for client relationship management, brand collaboration, and enterprise-level growth.
-            </p>
-            <ul className={styles.featureList}>
-              <li><CheckCircle2 className="text-accent" /> Premium Commercial Standards</li>
-              <li><CheckCircle2 className="text-accent" /> Transparent Business Operations</li>
-              <li><CheckCircle2 className="text-accent" /> Long-term Client Partnerships</li>
-            </ul>
-          </div>
-          <div className={styles.imagePlaceholder}>
-            <div className={styles.glassCard}>
-              <ShieldCheck size={64} className="text-accent" style={{ marginBottom: "1rem" }} />
-              <h3>Verified & Legitimate</h3>
-              <p className="text-muted">Officially registered in the USA</p>
+              <div className={styles.urlBar}>everlegit.com</div>
+            </div>
+            <div className={styles.dashboardBody}>
+              <PlayCircle size={64} className="text-accent" style={{ opacity: 0.8 }} />
+              <h3 style={{ marginTop: '1rem' }}>See Everlegit in Action</h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className={`section ${styles.servicesSection}`}>
+      {/* Main Features Grid */}
+      <section id="features" className="section">
         <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Professional <span className="text-accent">Services</span></h2>
-            <p className="section-subtitle">Comprehensive commercial solutions tailored for global brands and partners.</p>
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <h2 className="section-title">Build faster with AI</h2>
+            <p className="section-subtitle">
+              Everything you need to create a professional web presence in seconds.
+            </p>
           </div>
-          
-          <div className={styles.servicesGrid}>
-            {[
-              { icon: <Network />, title: "Business Consultation", desc: "Strategic insights for commercial growth and market entry." },
-              { icon: <Globe2 />, title: "Global Partnerships", desc: "Connecting reliable businesses across international borders." },
-              { icon: <FileText />, title: "Digital Support", desc: "Premium online infrastructure and client management." },
-            ].map((service, i) => (
-              <div key={i} className="card">
-                <div className={styles.iconBox}>{service.icon}</div>
-                <h3 style={{ marginBottom: "1rem" }}>{service.title}</h3>
-                <p className="text-muted">{service.desc}</p>
-              </div>
-            ))}
+
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}><Zap /></div>
+              <h3>Instant Generation</h3>
+              <p className="text-muted">Generate a fully functional website tailored to your business needs in under a minute.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}><Palette /></div>
+              <h3>Customizable Design</h3>
+              <p className="text-muted">Tweak colors, fonts, and layouts with an intuitive visual editor. No coding required.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}><Globe /></div>
+              <h3>Global Ready</h3>
+              <p className="text-muted">Optimized for speed and SEO, ensuring your brand stands out worldwide.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}><Shield /></div>
+              <h3>Secure & Reliable</h3>
+              <p className="text-muted">Enterprise-grade infrastructure keeping your business safe and online 24/7.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Verification & Trust */}
-      <section className={`section ${styles.verificationSection}`}>
-        <div className={`container ${styles.verificationBox}`}>
-          <div className={styles.twoCol}>
-            <div>
-              <h2 className="section-title">Business <span className="text-accent">Verification</span></h2>
-              <p className="text-muted" style={{ marginBottom: "2rem" }}>
-                We maintain the highest standards of commercial transparency. Ever Legit LLC is a fully registered entity authorized for international business.
+      {/* How it works */}
+      <section className="section">
+        <div className="container">
+          <div className={styles.bentoGrid}>
+            <div className={`${styles.bentoCard} ${styles.colSpan2}`}>
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Write a prompt. <br/>Get a website.</h3>
+              <p className="text-muted" style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
+                Just describe what you want, and Everlegit's AI will generate the layout, copy, and images automatically.
               </p>
-              <div className={styles.verifyItem}>
-                <strong>Company Name:</strong> Ever Legit LLC
-              </div>
-              <div className={styles.verifyItem}>
-                <strong>Registration Number:</strong> 2026-001921880
-              </div>
-              <div className={styles.verifyItem}>
-                <strong>Location:</strong> Wyoming, United States
-              </div>
-            </div>
-            <div className={styles.sealContainer}>
-              <div className={styles.officialSeal}>
-                VERIFIED
-                <span>USA COMPANY</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className={`section ${styles.testimonialsSection}`}>
-        <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Client <span className="text-accent">Testimonials</span></h2>
-            <p className="section-subtitle">What our global partners say about us.</p>
-          </div>
-          <div className={styles.testimonialsGrid}>
-            {[
-              { text: "Ever Legit LLC provided the foundational support we needed to expand internationally. Their professionalism is unmatched.", author: "James T.", role: "CEO, Global Retail Corp" },
-              { text: "The transparency and reliability they offer makes them an invaluable partner for our commercial operations.", author: "Sarah M.", role: "Director of Operations" },
-              { text: "Exceptional business consultation and digital support. We established trust with our new partners instantly through their services.", author: "Michael R.", role: "Managing Partner" }
-            ].map((testimonial, i) => (
-              <div key={i} className="card">
-                <div className={styles.quoteIcon}>"</div>
-                <p className="text-muted" style={{ marginBottom: "1.5rem", fontStyle: "italic" }}>{testimonial.text}</p>
-                <div>
-                  <strong>{testimonial.author}</strong>
-                  <div className="text-muted" style={{ fontSize: "0.875rem" }}>{testimonial.role}</div>
+              <div className={styles.promptDemo}>
+                <p>"Create a modern landing page for my new coffee shop in Seattle."</p>
+                <div className={styles.generatingBar}>
+                  <div className={styles.generatingProgress}></div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className={`section ${styles.faqSection}`}>
-        <div className="container" style={{ maxWidth: "800px" }}>
-          <div className="text-center">
-            <h2 className="section-title">Frequently Asked <span className="text-accent">Questions</span></h2>
-            <p className="section-subtitle">Clear answers to your common business inquiries.</p>
-          </div>
-          <div className={styles.faqList}>
-            {[
-              { q: "Is Ever Legit LLC officially registered?", a: "Yes, we are a fully registered commercial entity in Wyoming, United States, under registration number 2026-001921880." },
-              { q: "Do you offer international services?", a: "Absolutely. We specialize in global partnerships and provide commercial support across international borders." },
-              { q: "How can I access the client dashboard?", a: "The client dashboard is restricted to active partners. You will receive login credentials upon establishing a formal agreement." },
-              { q: "What is your primary mode of communication?", a: "We prioritize direct and efficient communication via our secure portal, email (info@everlegit.com), and instant WhatsApp support for urgent inquiries." }
-            ].map((faq, i) => (
-              <div key={i} className={styles.faqItem}>
-                <h3>{faq.q}</h3>
-                <p className="text-muted">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className={`section ${styles.verificationSection}`}>
-        <div className={`container ${styles.verificationBox}`}>
-          <div className={styles.twoCol}>
-            <div>
-              <h2 className="section-title">Business <span className="text-accent">Verification</span></h2>
-              <p className="text-muted" style={{ marginBottom: "2rem" }}>
-                We maintain the highest standards of commercial transparency. Ever Legit LLC is a fully registered entity authorized for international business.
-              </p>
-              <div className={styles.verifyItem}>
-                <strong>Company Name:</strong> Ever Legit LLC
-              </div>
-              <div className={styles.verifyItem}>
-                <strong>Registration Number:</strong> 2026-001921880
-              </div>
-              <div className={styles.verifyItem}>
-                <strong>Location:</strong> Wyoming, United States
-              </div>
             </div>
-            <div className={styles.sealContainer}>
-              <div className={styles.officialSeal}>
-                VERIFIED
-                <span>USA COMPANY</span>
-              </div>
+            <div className={styles.bentoCard}>
+              <div className={styles.iconCircle}><LayoutTemplate size={32} /></div>
+              <h3>100+ Templates</h3>
+              <p className="text-muted">Start from scratch or pick a beautiful template.</p>
+            </div>
+            <div className={styles.bentoCard}>
+              <div className={styles.iconCircle}><FileCode2 size={32} /></div>
+              <h3>Export Code</h3>
+              <p className="text-muted">Own your code. Export to React, HTML, or Next.js.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact & Map Section */}
-      <section id="contact" className={`section ${styles.contactSection}`}>
-        <div className={`container ${styles.twoCol}`}>
-          <div>
-            <h2 className="section-title">Get in <span className="text-accent">Touch</span></h2>
-            <p className="text-muted" style={{ marginBottom: "2rem" }}>
-              Ready to establish a reliable commercial partnership? Contact our team to begin the process.
-            </p>
-            <form className={styles.contactForm}>
-              <div className={styles.formGroup}>
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe" className={styles.input} />
+      {/* Verification / Trust Section */}
+      <section className="section" style={{ padding: '4rem 0' }}>
+        <div className="container">
+          <div className={styles.trustBanner}>
+            <div className={styles.trustContent}>
+              <h2>Trusted Business Partner</h2>
+              <p style={{ opacity: 0.9 }}>Everlegit is an officially registered entity, built for commercial excellence.</p>
+              <div className={styles.registrationBadge}>
+                Registration Number: <strong>2026</strong>
               </div>
-              <div className={styles.formGroup}>
-                <label>Business Email</label>
-                <input type="email" placeholder="contact@company.com" className={styles.input} />
-              </div>
-              <div className={styles.formGroup}>
-                <label>Message</label>
-                <textarea rows={4} placeholder="How can we help?" className={styles.input}></textarea>
-              </div>
-              <button type="button" className="btn btn-primary" style={{ width: "100%" }}>Send Message</button>
-            </form>
-          </div>
-          <div>
-            {/* Map Placeholder */}
-            <div className={styles.mapContainer}>
-              <div className={styles.mapInner}>
-                <Globe2 size={48} className="text-muted" />
-                <p>1309 Coffeen Avenue STE 19438<br/>Sheridan, Wyoming 82801</p>
-              </div>
+            </div>
+            <div className={styles.trustVisual}>
+              <Shield size={120} style={{ opacity: 0.2 }} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* WhatsApp Floating Button */}
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className={styles.whatsappBtn}>
-        <MessageSquare />
-      </a>
+      {/* Pricing / CTA */}
+      <section id="pricing" className="section">
+        <div className="container text-center">
+          <h2 className="section-title">Ready to launch?</h2>
+          <p className="section-subtitle">Join thousands of creators building with Everlegit today.</p>
+          <button className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
+            Start Building Free
+          </button>
+          <p className="text-muted" style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
+            No credit card required. Cancel anytime.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

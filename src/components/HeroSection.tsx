@@ -1,69 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight, Globe, Shield, Award } from "lucide-react";
+import { Sparkles, ArrowRight, Video } from "lucide-react";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
-      <div className={styles.heroBackground}>
-        <div className={styles.glow} />
-      </div>
-      
-      <div className={`container ${styles.heroContainer}`}>
+      <div className="container">
         <motion.div 
           className={styles.heroContent}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className={styles.badge}>
-            <span className={styles.pulse}></span>
-            Registered US Company
+          {/* Badge */}
+          <div className={styles.badgeWrapper}>
+            <div className={styles.badge}>
+              <span className={styles.badgeNew}>NEW</span>
+              <span className={styles.badgeText}>Templates Are Free</span>
+              <ArrowRight size={14} className={styles.badgeIcon} />
+            </div>
           </div>
           
+          {/* Main Title */}
           <h1 className={styles.title}>
-            Global Commercial <br />
-            <span className="text-accent">Excellence</span>
+            Idea to website
           </h1>
           
+          {/* Subtitle */}
           <p className={styles.description}>
-            Ever Legit LLC establishes trust, credibility, and long-term business relationships with clients, partners, and international brands through a premium corporate structure.
+            Generate Websites Instantly, Customize to Perfection.
           </p>
-          
-          <div className={styles.actions}>
-            <Link href="#contact" className="btn btn-primary">
-              Partner With Us <ArrowRight size={18} />
-            </Link>
-            <Link href="#about" className="btn btn-outline">
-              Discover Our Mission
-            </Link>
-          </div>
-        </motion.div>
 
-        <motion.div 
-          className={styles.statsGrid}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className={styles.statCard}>
-            <Globe className={styles.statIcon} />
-            <h3>Global Reach</h3>
-            <p>International operations & partnerships</p>
-          </div>
-          <div className={styles.statCard}>
-            <Shield className={styles.statIcon} />
-            <h3>Verified Trust</h3>
-            <p>100% compliant business operations</p>
-          </div>
-          <div className={styles.statCard}>
-            <Award className={styles.statIcon} />
-            <h3>Premium Standards</h3>
-            <p>Excellence in commercial services</p>
-          </div>
+          {/* AI Prompt Input UI (Webild style) */}
+          <motion.div 
+            className={styles.promptContainer}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            <div className={styles.promptBox}>
+              <div className={styles.promptHeader}>
+                <Sparkles size={18} className="text-accent" />
+                <span className="font-medium">AI Website Builder</span>
+              </div>
+              <textarea 
+                className={styles.promptInput} 
+                placeholder="What do you want to build? E.g., A modern portfolio for a freelance designer..."
+                rows={3}
+              ></textarea>
+              <div className={styles.promptFooter}>
+                <button className="btn btn-ghost" style={{ fontSize: '0.875rem' }}>
+                  <Video size={16} /> Watch Demo
+                </button>
+                <button className={`btn btn-primary ${styles.generateBtn}`}>
+                  Generate <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

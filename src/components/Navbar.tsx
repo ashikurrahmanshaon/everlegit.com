@@ -3,22 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, X, Moon, Sun, Briefcase } from "lucide-react";
+import { Wand2, Moon, Sun, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -26,31 +20,53 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={`container ${styles.navContainer}`}>
-        <Link href="/" className={styles.logo}>
-          <Briefcase className={styles.logoIcon} />
-          <span>Ever Legit LLC</span>
-        </Link>
+    <header className={styles.header}>
+      <div className={styles.navContainer}>
+        <div className={styles.navPill}>
+          {/* Logo */}
+          <Link href="/" className={styles.logo}>
+            <div className={styles.logoIconWrapper}>
+              <Wand2 size={16} />
+            </div>
+            <span>Everlegit</span>
+          </Link>
 
-        <nav className={`${styles.navLinks} ${mobileMenuOpen ? styles.mobileOpen : ""}`}>
-          <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-          <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-          
-          {mounted && (
-            <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle Theme">
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          {/* Desktop Links */}
+          <nav className={styles.desktopNav}>
+            <Link href="#templates">Templates</Link>
+            <Link href="#features">Features</Link>
+            <Link href="#pricing">Pricing</Link>
+            <Link href="#faq">FAQ</Link>
+          </nav>
+
+          {/* Actions */}
+          <div className={styles.actions}>
+            {mounted && (
+              <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle Theme">
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            )}
+            <Link href="/dashboard" className="btn btn-ghost" style={{ padding: '0.5rem 1rem' }}>Log in</Link>
+            <Link href="/dashboard" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Sign up</Link>
+            
+            <button className={styles.mobileToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          )}
-        </nav>
-
-        <button className={styles.mobileToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          </div>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className={styles.mobileMenu}>
+          <div className={styles.mobileMenuInner}>
+            <Link href="#templates" onClick={() => setMobileMenuOpen(false)}>Templates</Link>
+            <Link href="#features" onClick={() => setMobileMenuOpen(false)}>Features</Link>
+            <Link href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+            <Link href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

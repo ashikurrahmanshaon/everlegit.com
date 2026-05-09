@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
@@ -11,19 +11,13 @@ const inter = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
-  title: "Ever Legit LLC | Professional Commercial Company",
-  description: "Ever Legit LLC is a modern, professional, and globally focused commercial company designed to establish trust, credibility, and long-term business relationships.",
-  keywords: ["Ever Legit LLC", "Commercial Company", "Business Consultation", "Global Partnerships", "Wyoming Business"],
+  title: "Everlegit - Idea to website",
+  description: "Generate Websites Instantly, Customize to Perfection.",
+  keywords: ["Everlegit", "Website Builder", "AI Website"],
   openGraph: {
-    title: "Ever Legit LLC | Global Commercial Excellence",
-    description: "Establishing trust, credibility, and long-term business relationships worldwide.",
+    title: "Everlegit - Idea to website",
+    description: "Generate Websites Instantly, Customize to Perfection.",
     type: "website",
   }
 };
@@ -35,16 +29,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={inter.variable}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <div className="app-container">
+            {/* Background image for the blurred landscape effect */}
+            <img src="/bg.png" alt="Background" className="bg-image" />
+            <div className="bg-overlay"></div>
+            
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
