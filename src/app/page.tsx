@@ -7,19 +7,16 @@ export default function Home() {
     <>
       <HeroSection />
 
-      {/* Video / Dashboard Preview Section */}
+      {/* Corporate Video / Overview Section */}
       <section className="section" style={{ paddingTop: '0' }}>
         <div className="container">
-          <div className={styles.dashboardPreview}>
-            <div className={styles.dashboardHeader}>
-              <div className={styles.dots}>
-                <span></span><span></span><span></span>
-              </div>
-              <div className={styles.urlBar}>everlegit.com</div>
-            </div>
-            <div className={styles.dashboardBody}>
-              <PlayCircle size={64} className="text-accent" style={{ opacity: 0.8 }} />
-              <h3 style={{ marginTop: '1rem' }}>See Everlegit in Action</h3>
+          <div className={styles.dashboardPreview} style={{ borderRadius: '1rem', overflow: 'hidden', border: '1px solid var(--border)' }}>
+            <div className={styles.dashboardBody} style={{ padding: '6rem 2rem', background: 'var(--surface)' }}>
+              <PlayCircle size={80} className="text-accent" style={{ opacity: 0.9, marginBottom: '1.5rem' }} />
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Our Global Supply Chain in Action</h3>
+              <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                Watch how Everlegit orchestrates end-to-end sourcing, quality control, and logistics for top-tier e-commerce brands.
+              </p>
             </div>
           </div>
         </div>
@@ -65,16 +62,16 @@ export default function Home() {
         <div className="container">
           <div className={styles.bentoGrid}>
             <div className={`${styles.bentoCard} ${styles.colSpan2}`}>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Find a product. <br/>Dominate the market.</h3>
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>End-to-End Supply Chain Management</h3>
               <p className="text-muted" style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                Describe your target niche, and Everlegit's sourcing experts and AI will find the perfect supplier automatically.
+                We don't just find suppliers; we manage your entire supply chain. From factory audits to final delivery at Amazon FBA warehouses, our dedicated agents handle every step with precision.
               </p>
-              <div className={styles.promptDemo}>
-                <p>"Find me a trending pet supply product for Amazon FBA with 40%+ ROI."</p>
-                <div className={styles.generatingBar}>
-                  <div className={styles.generatingProgress}></div>
-                </div>
-              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Check size={20} className="text-accent"/> Factory Audits & Compliance</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Check size={20} className="text-accent"/> Price Negotiation</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Check size={20} className="text-accent"/> Pre-shipment Inspections</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Check size={20} className="text-accent"/> Customs Clearance</li>
+              </ul>
             </div>
             <div className={styles.bentoCard}>
               <div className={styles.iconCircle}><LayoutTemplate size={32} /></div>
@@ -108,16 +105,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing / CTA */}
-      <section id="pricing" className="section">
+      {/* Corporate CTA */}
+      <section id="contact" className="section">
         <div className="container text-center">
-          <h2 className="section-title">Ready to launch your product?</h2>
-          <p className="section-subtitle">Join successful e-commerce sellers sourcing with Everlegit today.</p>
-          <button className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
-            Start Sourcing Free
+          <h2 className="section-title">Ready to scale your operations?</h2>
+          <p className="section-subtitle">Partner with Everlegit to streamline your sourcing and logistics.</p>
+          <button className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem', borderRadius: 'var(--border-radius-pill)' }}>
+            Schedule a Consultation
           </button>
           <p className="text-muted" style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
-            No credit card required. Cancel anytime.
+            Speak with our sourcing experts today.
           </p>
         </div>
       </section>

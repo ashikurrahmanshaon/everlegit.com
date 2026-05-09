@@ -33,10 +33,10 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <nav className={styles.desktopNav}>
-            <Link href="#sourcing">Sourcing</Link>
-            <Link href="#logistics">Logistics</Link>
-            <Link href="#pricing">Pricing</Link>
-            <Link href="#faq">FAQ</Link>
+            <Link href="#services">Services</Link>
+            <Link href="#about">About Us</Link>
+            <Link href="#case-studies">Case Studies</Link>
+            <Link href="#contact">Contact</Link>
           </nav>
 
           {/* Actions */}
@@ -46,8 +46,8 @@ export default function Navbar() {
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
-            <Link href="/dashboard" className="btn btn-ghost" style={{ padding: '0.5rem 1rem' }}>Log in</Link>
-            <Link href="/dashboard" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Sign up</Link>
+            <Link href="/dashboard" className="btn btn-ghost" style={{ padding: '0.5rem 1rem' }}>Client Portal</Link>
+            <Link href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Get a Quote</Link>
             
             <button className={styles.mobileToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -60,10 +60,10 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <div className={styles.mobileMenuInner}>
-            <Link href="#sourcing" onClick={() => setMobileMenuOpen(false)}>Sourcing</Link>
-            <Link href="#logistics" onClick={() => setMobileMenuOpen(false)}>Logistics</Link>
-            <Link href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-            <Link href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
+            <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+            <Link href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+            <Link href="#case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+            <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </div>
         </div>
       )}

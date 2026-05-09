@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
               <span>Everlegit</span>
             </Link>
-            <p className="text-muted">Source Products Instantly, Scale Your E-commerce Empire.</p>
+            <p className="text-muted">Enterprise-grade supply chain management for scaling e-commerce brands.</p>
             <div className={styles.socials}>
               <a href="#" aria-label="Twitter">Twitter</a>
               <a href="#" aria-label="Github">Github</a>
@@ -24,19 +24,19 @@ export default function Footer() {
           
           <div className={styles.linksGrid}>
             <div>
-              <h3>Product</h3>
+              <h3>Services</h3>
               <ul>
-                <li><Link href="#sourcing">Sourcing</Link></li>
-                <li><Link href="#pricing">Pricing</Link></li>
-                <li><Link href="#logistics">Logistics</Link></li>
+                <li><Link href="#services">Product Sourcing</Link></li>
+                <li><Link href="#logistics">Global Logistics</Link></li>
+                <li><Link href="#quality-control">Quality Control</Link></li>
               </ul>
             </div>
             <div>
-              <h3>Resources</h3>
+              <h3>Company</h3>
               <ul>
-                <li><Link href="#docs">Documentation</Link></li>
-                <li><Link href="#blog">Blog</Link></li>
-                <li><Link href="#support">Support</Link></li>
+                <li><Link href="#about">About Us</Link></li>
+                <li><Link href="#careers">Careers</Link></li>
+                <li><Link href="#contact">Contact</Link></li>
               </ul>
             </div>
             <div>

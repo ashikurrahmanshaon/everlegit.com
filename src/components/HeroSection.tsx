@@ -30,35 +30,23 @@ export default function HeroSection() {
           
           {/* Subtitle */}
           <p className={styles.description}>
-            Source winning products for Amazon, Walmart, and your e-commerce stores effortlessly.
+            Comprehensive sourcing, quality control, and global logistics for enterprise e-commerce brands on Amazon and Walmart.
           </p>
 
-          {/* AI Prompt Input UI (Webild style) */}
+          {/* Corporate CTA Buttons */}
           <motion.div 
-            className={styles.promptContainer}
+            className={styles.ctaContainer}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}
           >
-            <div className={styles.promptBox}>
-              <div className={styles.promptHeader}>
-                <Sparkles size={18} className="text-accent" />
-                <span className="font-medium">AI Product Sourcing</span>
-              </div>
-              <textarea 
-                className={styles.promptInput} 
-                placeholder="What products are you looking for? E.g., High-margin electronics for Amazon FBA..."
-                rows={3}
-              ></textarea>
-              <div className={styles.promptFooter}>
-                <button className="btn btn-ghost" style={{ fontSize: '0.875rem' }}>
-                  <Video size={16} /> Watch Demo
-                </button>
-                <button className={`btn btn-primary ${styles.generateBtn}`}>
-                  Start Sourcing <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
+            <button className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: 'var(--border-radius-pill)' }}>
+              Schedule Consultation <ArrowRight size={18} style={{ marginLeft: '0.5rem', display: 'inline' }} />
+            </button>
+            <button className="btn btn-ghost" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: 'var(--border-radius-pill)', border: '1px solid var(--border)' }}>
+              Explore Services
+            </button>
           </motion.div>
         </motion.div>
       </div>
