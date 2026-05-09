@@ -18,19 +18,19 @@ export default function HeroSection() {
           <div className={styles.badgeWrapper}>
             <div className={styles.badge}>
               <span className={styles.badgeNew}>NEW</span>
-              <span className={styles.badgeText}>Templates Are Free</span>
+              <span className={styles.badgeText}>Global Sourcing Available</span>
               <ArrowRight size={14} className={styles.badgeIcon} />
             </div>
           </div>
           
           {/* Main Title */}
           <h1 className={styles.title}>
-            Idea to website
+            Global E-commerce Sourcing
           </h1>
           
           {/* Subtitle */}
           <p className={styles.description}>
-            Generate Websites Instantly, Customize to Perfection.
+            Source winning products for Amazon, Walmart, and your e-commerce stores effortlessly.
           </p>
 
           {/* AI Prompt Input UI (Webild style) */}
@@ -43,11 +43,11 @@ export default function HeroSection() {
             <div className={styles.promptBox}>
               <div className={styles.promptHeader}>
                 <Sparkles size={18} className="text-accent" />
-                <span className="font-medium">AI Website Builder</span>
+                <span className="font-medium">AI Product Sourcing</span>
               </div>
               <textarea 
                 className={styles.promptInput} 
-                placeholder="What do you want to build? E.g., A modern portfolio for a freelance designer..."
+                placeholder="What products are you looking for? E.g., High-margin electronics for Amazon FBA..."
                 rows={3}
               ></textarea>
               <div className={styles.promptFooter}>
@@ -55,7 +55,7 @@ export default function HeroSection() {
                   <Video size={16} /> Watch Demo
                 </button>
                 <button className={`btn btn-primary ${styles.generateBtn}`}>
-                  Generate <ArrowRight size={16} />
+                  Start Sourcing <ArrowRight size={16} />
                 </button>
               </div>
             </div>

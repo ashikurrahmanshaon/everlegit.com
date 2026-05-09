@@ -12,12 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Everlegit - Idea to website",
-  description: "Generate Websites Instantly, Customize to Perfection.",
-  keywords: ["Everlegit", "Website Builder", "AI Website"],
+  title: "Everlegit - Idea to E-commerce Empire",
+  description: "Source Products Instantly, Scale Your E-commerce Empire.",
+  keywords: ["Everlegit", "Product Sourcing", "Amazon FBA", "Walmart WFS", "E-commerce Logistics"],
   openGraph: {
-    title: "Everlegit - Idea to website",
-    description: "Generate Websites Instantly, Customize to Perfection.",
+    title: "Everlegit - Idea to E-commerce Empire",
+    description: "Source Products Instantly, Scale Your E-commerce Empire.",
     type: "website",
   }
 };

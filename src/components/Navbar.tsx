@@ -33,8 +33,8 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <nav className={styles.desktopNav}>
-            <Link href="#templates">Templates</Link>
-            <Link href="#features">Features</Link>
+            <Link href="#sourcing">Sourcing</Link>
+            <Link href="#logistics">Logistics</Link>
             <Link href="#pricing">Pricing</Link>
             <Link href="#faq">FAQ</Link>
           </nav>
@@ -60,8 +60,8 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <div className={styles.mobileMenuInner}>
-            <Link href="#templates" onClick={() => setMobileMenuOpen(false)}>Templates</Link>
-            <Link href="#features" onClick={() => setMobileMenuOpen(false)}>Features</Link>
+            <Link href="#sourcing" onClick={() => setMobileMenuOpen(false)}>Sourcing</Link>
+            <Link href="#logistics" onClick={() => setMobileMenuOpen(false)}>Logistics</Link>
             <Link href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
             <Link href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
           </div>

@@ -29,32 +29,32 @@ export default function Home() {
       <section id="features" className="section">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <h2 className="section-title">Build faster with AI</h2>
+            <h2 className="section-title">Scale your e-commerce business</h2>
             <p className="section-subtitle">
-              Everything you need to create a professional web presence in seconds.
+              Everything you need to source, verify, and launch products on Amazon and Walmart.
             </p>
           </div>
 
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><Zap /></div>
-              <h3>Instant Generation</h3>
-              <p className="text-muted">Generate a fully functional website tailored to your business needs in under a minute.</p>
+              <h3>Product Sourcing</h3>
+              <p className="text-muted">Find high-margin products tailored to your exact e-commerce needs.</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><Palette /></div>
-              <h3>Customizable Design</h3>
-              <p className="text-muted">Tweak colors, fonts, and layouts with an intuitive visual editor. No coding required.</p>
+              <h3>Supplier Verification</h3>
+              <p className="text-muted">We verify suppliers, negotiate prices, and handle quality control so you don't have to.</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><Globe /></div>
-              <h3>Global Ready</h3>
-              <p className="text-muted">Optimized for speed and SEO, ensuring your brand stands out worldwide.</p>
+              <h3>Global Logistics</h3>
+              <p className="text-muted">Optimized supply chains ensuring your products reach Amazon FBA or Walmart WFS fast.</p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><Shield /></div>
               <h3>Secure & Reliable</h3>
-              <p className="text-muted">Enterprise-grade infrastructure keeping your business safe and online 24/7.</p>
+              <p className="text-muted">Enterprise-grade operations keeping your inventory safe and stocked 24/7.</p>
             </div>
           </div>
         </div>
@@ -65,12 +65,12 @@ export default function Home() {
         <div className="container">
           <div className={styles.bentoGrid}>
             <div className={`${styles.bentoCard} ${styles.colSpan2}`}>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Write a prompt. <br/>Get a website.</h3>
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Find a product. <br/>Dominate the market.</h3>
               <p className="text-muted" style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                Just describe what you want, and Everlegit's AI will generate the layout, copy, and images automatically.
+                Describe your target niche, and Everlegit's sourcing experts and AI will find the perfect supplier automatically.
               </p>
               <div className={styles.promptDemo}>
-                <p>"Create a modern landing page for my new coffee shop in Seattle."</p>
+                <p>"Find me a trending pet supply product for Amazon FBA with 40%+ ROI."</p>
                 <div className={styles.generatingBar}>
                   <div className={styles.generatingProgress}></div>
                 </div>
@@ -78,13 +78,13 @@ export default function Home() {
             </div>
             <div className={styles.bentoCard}>
               <div className={styles.iconCircle}><LayoutTemplate size={32} /></div>
-              <h3>100+ Templates</h3>
-              <p className="text-muted">Start from scratch or pick a beautiful template.</p>
+              <h3>1000+ Suppliers</h3>
+              <p className="text-muted">Tap into our network of vetted international suppliers.</p>
             </div>
             <div className={styles.bentoCard}>
               <div className={styles.iconCircle}><FileCode2 size={32} /></div>
-              <h3>Export Code</h3>
-              <p className="text-muted">Own your code. Export to React, HTML, or Next.js.</p>
+              <h3>FBA/WFS Ready</h3>
+              <p className="text-muted">We handle packaging, barcodes, and direct shipping to Amazon/Walmart.</p>
             </div>
           </div>
         </div>
@@ -111,10 +111,10 @@ export default function Home() {
       {/* Pricing / CTA */}
       <section id="pricing" className="section">
         <div className="container text-center">
-          <h2 className="section-title">Ready to launch?</h2>
-          <p className="section-subtitle">Join thousands of creators building with Everlegit today.</p>
+          <h2 className="section-title">Ready to launch your product?</h2>
+          <p className="section-subtitle">Join successful e-commerce sellers sourcing with Everlegit today.</p>
           <button className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
-            Start Building Free
+            Start Sourcing Free
           </button>
           <p className="text-muted" style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
             No credit card required. Cancel anytime.

@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
               <span>Everlegit</span>
             </Link>
-            <p className="text-muted">Generate Websites Instantly, Customize to Perfection.</p>
+            <p className="text-muted">Source Products Instantly, Scale Your E-commerce Empire.</p>
             <div className={styles.socials}>
               <a href="#" aria-label="Twitter">Twitter</a>
               <a href="#" aria-label="Github">Github</a>
@@ -26,9 +26,9 @@ export default function Footer() {
             <div>
               <h3>Product</h3>
               <ul>
-                <li><Link href="#features">Features</Link></li>
+                <li><Link href="#sourcing">Sourcing</Link></li>
                 <li><Link href="#pricing">Pricing</Link></li>
-                <li><Link href="#templates">Templates</Link></li>
+                <li><Link href="#logistics">Logistics</Link></li>
               </ul>
             </div>
             <div>
