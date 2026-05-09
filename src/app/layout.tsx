@@ -12,12 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Everlegit - Idea to E-commerce Empire",
-  description: "Source Products Instantly, Scale Your E-commerce Empire.",
-  keywords: ["Everlegit", "Product Sourcing", "Amazon FBA", "Walmart WFS", "E-commerce Logistics"],
+  title: "Everlegit | Global E-commerce Sourcing & Logistics",
+  description: "Enterprise-grade supply chain management for scaling e-commerce brands on Amazon and Walmart.",
+  keywords: ["Everlegit", "Product Sourcing", "Amazon FBA", "Walmart WFS", "E-commerce Logistics", "Supply Chain Management"],
   openGraph: {
-    title: "Everlegit - Idea to E-commerce Empire",
-    description: "Source Products Instantly, Scale Your E-commerce Empire.",
+    title: "Everlegit | Global E-commerce Sourcing & Logistics",
+    description: "Enterprise-grade supply chain management for scaling e-commerce brands on Amazon and Walmart.",
     type: "website",
   }
 };

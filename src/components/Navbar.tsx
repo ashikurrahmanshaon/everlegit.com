@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Wand2, Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -25,8 +25,8 @@ export default function Navbar() {
         <div className={styles.navPill}>
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <div className={styles.logoIconWrapper}>
-              <Wand2 size={16} />
+            <div className={styles.logoIconWrapper} style={{ background: 'transparent', padding: 0 }}>
+              <img src="/logo.png" alt="Everlegit Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'contain' }} />
             </div>
             <span>Everlegit</span>
           </Link>

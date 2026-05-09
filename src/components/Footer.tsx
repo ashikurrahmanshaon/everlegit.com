@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wand2 } from "lucide-react";
+
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -9,8 +9,8 @@ export default function Footer() {
         <div className={styles.footerTop}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <div className={styles.logoIconWrapper}>
-                <Wand2 size={16} />
+              <div className={styles.logoIconWrapper} style={{ background: 'transparent', padding: 0 }}>
+                <img src="/logo.png" alt="Everlegit Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'contain' }} />
               </div>
               <span>Everlegit</span>
             </Link>

@@ -10,11 +10,12 @@ export default function Home() {
       {/* Corporate Video / Overview Section */}
       <section className="section" style={{ paddingTop: '0' }}>
         <div className="container">
-          <div className={styles.dashboardPreview} style={{ borderRadius: '1rem', overflow: 'hidden', border: '1px solid var(--border)' }}>
-            <div className={styles.dashboardBody} style={{ padding: '6rem 2rem', background: 'var(--surface)' }}>
-              <PlayCircle size={80} className="text-accent" style={{ opacity: 0.9, marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Our Global Supply Chain in Action</h3>
-              <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <div className={styles.dashboardPreview} style={{ borderRadius: '1rem', overflow: 'hidden', border: '1px solid var(--border)', position: 'relative' }}>
+            <img src="/hero-image.png" alt="Global Supply Chain" style={{ width: '100%', minHeight: '400px', objectFit: 'cover', display: 'block' }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem', textAlign: 'center' }}>
+              <PlayCircle size={80} style={{ color: 'white', opacity: 0.9, marginBottom: '1.5rem', cursor: 'pointer' }} />
+              <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white', fontWeight: 'bold' }}>Our Global Supply Chain in Action</h3>
+              <p style={{ color: 'white', maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem', opacity: 0.9 }}>
                 Watch how Everlegit orchestrates end-to-end sourcing, quality control, and logistics for top-tier e-commerce brands.
               </p>
             </div>
