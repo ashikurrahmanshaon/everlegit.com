@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import { Globe, Shield, Building2, Network } from "lucide-react";
+import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
   Solutions: [
@@ -43,13 +44,7 @@ export default function Footer() {
             <div className={styles.brandCol}>
               <Link href="/" className={styles.logo}>
                 <div className={styles.logoMark}>
-                  <img
-                    src="/logo.png"
-                    alt="EverLegit"
-                    width={26}
-                    height={26}
-                    style={{ objectFit: "contain", borderRadius: "5px" }}
-                  />
+                  <Logo />
                 </div>
                 <span className={styles.logoText}>EverLegit</span>
               </Link>

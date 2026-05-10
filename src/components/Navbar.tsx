@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Logo } from "./Logo";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
@@ -39,13 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <div className={styles.logoMark}>
-            <img
-              src="/logo.png"
-              alt="EverLegit"
-              width={28}
-              height={28}
-              style={{ objectFit: "contain", borderRadius: "6px" }}
-            />
+            <Logo />
           </div>
           <span className={styles.logoText}>EverLegit</span>
         </Link>
