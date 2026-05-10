@@ -1,0 +1,20 @@
+.hero { padding: 10rem 0 6rem; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,169,157,0.1) 0%, transparent 65%), linear-gradient(180deg,#050911,#0A0F1C); position: relative; overflow: hidden; }
+.heroOrb { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle,rgba(0,169,157,0.07) 0%,transparent 70%); top: -150px; left: 50%; transform: translateX(-50%); pointer-events: none; }
+.heroInner { text-align: center; max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.heroTitle { font-family: var(--font-manrope),sans-serif; font-weight: 800; font-size: clamp(2.25rem,5vw,3.75rem); letter-spacing: -0.03em; color: #fff; margin-bottom: 1.5rem; line-height: 1.1; }
+.heroSub { font-size: clamp(1rem,2vw,1.15rem); color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 660px; margin: 0 auto 2.5rem; }
+.heroCtas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.partnerGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.partnerCard { cursor: default; }
+.partnerIcon { width: 48px; height: 48px; border-radius: 12px; background: rgba(0,169,157,0.1); border: 1px solid rgba(0,169,157,0.2); display: flex; align-items: center; justify-content: center; color: #00A99D; margin-bottom: 1.25rem; }
+.partnerTitle { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; font-family: var(--font-manrope),sans-serif; }
+.partnerDesc { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.65; margin-bottom: 1.25rem; }
+.benefitList { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.benefitItem { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+.applySection { background: #0f1729; }
+.applyBanner { position: relative; text-align: center; background: #111827; border: 1px solid rgba(255,255,255,0.07); border-radius: 24px; padding: 5rem 3rem; overflow: hidden; }
+.applyBanner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg,transparent,rgba(0,169,157,0.5),transparent); }
+.applyOrb { position: absolute; width: 500px; height: 300px; border-radius: 50%; background: radial-gradient(circle,rgba(0,169,157,0.07) 0%,transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+.applyTitle { font-family: var(--font-manrope),sans-serif; font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800; color: #fff; margin-bottom: 1rem; letter-spacing: -0.02em; }
+.applySub { color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 520px; margin: 0 auto 2.5rem; font-size: 0.975rem; }
+@media (max-width:768px) { .partnerGrid { grid-template-columns:1fr; } .applyBanner { padding:3rem 1.75rem; } }

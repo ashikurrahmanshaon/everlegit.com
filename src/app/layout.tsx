@@ -1,25 +1,51 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: 'swap',
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Everlegit | Global E-commerce Sourcing & Logistics",
-  description: "Enterprise-grade supply chain management for scaling e-commerce brands on Amazon and Walmart.",
-  keywords: ["Everlegit", "Product Sourcing", "Amazon FBA", "Walmart WFS", "E-commerce Logistics", "Supply Chain Management"],
+  title: "EverLegit | Enterprise Ecommerce Infrastructure & Marketplace Technology",
+  description:
+    "EverLegit is a USA-based enterprise ecommerce infrastructure and marketplace technology company. Scalable digital commerce systems, supplier operations, and global marketplace management solutions since 2017.",
+  keywords: [
+    "EverLegit",
+    "Enterprise Ecommerce Infrastructure",
+    "Marketplace Technology",
+    "Supplier Operations",
+    "Digital Commerce Systems",
+    "Global Ecommerce",
+    "Commerce Automation",
+    "B2B Commerce",
+    "Marketplace Management",
+  ],
   openGraph: {
-    title: "Everlegit | Global E-commerce Sourcing & Logistics",
-    description: "Enterprise-grade supply chain management for scaling e-commerce brands on Amazon and Walmart.",
+    title: "EverLegit | Enterprise Ecommerce Infrastructure",
+    description:
+      "USA-based enterprise ecommerce infrastructure and marketplace technology company supporting scalable digital commerce operations worldwide.",
     type: "website",
-  }
+    siteName: "EverLegit",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EverLegit | Enterprise Ecommerce Infrastructure",
+    description:
+      "Scalable ecommerce infrastructure, marketplace technology, and supplier operations for modern enterprises.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -29,23 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.variable}>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="app-container">
-            {/* Background image for the blurred landscape effect */}
-            <img src="/bg.png" alt="Background" className="bg-image" />
-            <div className="bg-overlay"></div>
-            
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+      <body className={`${inter.variable} ${manrope.variable}`}>
+        <div className="app-container">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

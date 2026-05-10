@@ -1,53 +1,89 @@
-export const metadata = {
-  title: "Privacy Policy | Ever Legit LLC",
-  description: "Privacy policy and data protection standards for Ever Legit LLC.",
+import type { Metadata } from "next";
+import { Shield, CheckCircle2 } from "lucide-react";
+import styles from "../legal.module.css";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | EverLegit",
+  description: "Privacy Policy for EverLegit Enterprise Ecommerce Infrastructure.",
 };
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
   return (
-    <div className="container" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h1 className="section-title">Privacy <span className="text-accent">Policy</span></h1>
-        <p className="text-muted" style={{ marginBottom: '3rem' }}>Last Updated: January 1, 2026</p>
-
-        <div className="card" style={{ padding: '3rem' }}>
-          <section style={{ marginBottom: '2.5rem' }}>
-            <h2 style={{ marginBottom: '1rem', fontSize: '1.5rem' }}>1. Information We Collect</h2>
-            <p className="text-muted">
-              Ever Legit LLC collects business-related information necessary for providing commercial services, establishing partnerships, and fulfilling legal requirements. This includes contact details, company information, and communication history.
+    <>
+      <section className={styles.hero}>
+        <div className={styles.heroOrb} />
+        <div className="container">
+          <div className={styles.heroInner}>
+            <div className={styles.badge}><Shield size={16} /> Legal & Compliance</div>
+            <h1 className={styles.heroTitle}>Privacy Policy</h1>
+            <p className={styles.heroSub}>
+              Last Updated: May 2026. This Privacy Policy outlines how EverLegit collects, uses, and protects your information across our enterprise infrastructure.
             </p>
-          </section>
-
-          <section style={{ marginBottom: '2.5rem' }}>
-            <h2 style={{ marginBottom: '1rem', fontSize: '1.5rem' }}>2. How We Use Information</h2>
-            <p className="text-muted">
-              We use the collected information exclusively for:
-            </p>
-            <ul className="text-muted" style={{ paddingLeft: '1.5rem', marginTop: '1rem' }}>
-              <li>Providing consultation and commercial services</li>
-              <li>Managing client and partner relationships</li>
-              <li>Verifying business identities for brand approvals</li>
-              <li>Complying with United States federal and state regulations</li>
-            </ul>
-          </section>
-
-          <section style={{ marginBottom: '2.5rem' }}>
-            <h2 style={{ marginBottom: '1rem', fontSize: '1.5rem' }}>3. Data Protection</h2>
-            <p className="text-muted">
-              We implement enterprise-grade security measures to protect your business data against unauthorized access, alteration, disclosure, or destruction. We maintain strict confidentiality agreements with all partners.
-            </p>
-          </section>
-
-          <section>
-            <h2 style={{ marginBottom: '1rem', fontSize: '1.5rem' }}>4. Contact Us</h2>
-            <p className="text-muted">
-              If you have questions about this Privacy Policy, please contact us at: <br/>
-              <strong>Email:</strong> info@everlegit.com<br/>
-              <strong>Address:</strong> 1309 Coffeen Avenue STE 19438, Sheridan, Wyoming 82801, United States
-            </p>
-          </section>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className={styles.contentSection}>
+        <div className="container">
+          <div className={styles.contentCard}>
+            <div className={styles.contentBlock}>
+              <h2 className={styles.contentTitle}>1. Information We Collect</h2>
+              <p className={styles.contentText}>
+                EverLegit collects information to provide and improve our enterprise ecommerce infrastructure, marketplace systems, and supplier operations. This includes:
+              </p>
+              <ul className={styles.contentList}>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span><strong>Business Information:</strong> Company name, registration details, tax identification numbers, and business contact information.</span>
+                </li>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span><strong>Operational Data:</strong> Supply chain data, marketplace integration details, inventory records, and fulfillment information.</span>
+                </li>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span><strong>Technical Information:</strong> IP addresses, browser types, API usage logs, and system interaction data.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.contentBlock}>
+              <h2 className={styles.contentTitle}>2. How We Use Information</h2>
+              <p className={styles.contentText}>
+                We utilize collected information solely for enterprise operations and service delivery:
+              </p>
+              <ul className={styles.contentList}>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span>Facilitating marketplace infrastructure and managing supplier ecosystems.</span>
+                </li>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span>Ensuring compliance with international trade and ecommerce regulations.</span>
+                </li>
+                <li className={styles.contentItem}>
+                  <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0, marginTop: "4px" }} />
+                  <span>Enhancing operational security and preventing fraudulent activities.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.contentBlock}>
+              <h2 className={styles.contentTitle}>3. Data Security & Enterprise Standards</h2>
+              <p className={styles.contentText}>
+                EverLegit implements enterprise-grade security measures to protect business and operational data. We utilize encrypted data transmission, secure data centers, and continuous risk monitoring. Our infrastructure aligns with SOC 2 standards to ensure the highest level of data protection for our global partners.
+              </p>
+            </div>
+
+            <div className={styles.contentBlock}>
+              <h2 className={styles.contentTitle}>4. Contact Us</h2>
+              <p className={styles.contentText}>
+                For privacy-related inquiries or to exercise your data rights, please contact our Compliance Team at <strong>compliance@everlegit.com</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

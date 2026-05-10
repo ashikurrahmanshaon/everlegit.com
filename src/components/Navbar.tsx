@@ -2,71 +2,131 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import styles from "./Navbar.module.css";
 
+const NAV_LINKS = [
+  {
+    label: "Solutions",
+    href: "#solutions",
+    children: [
+      { label: "Marketplace Infrastructure", href: "#marketplace" },
+      { label: "Enterprise Ecommerce", href: "#ecommerce" },
+      { label: "Supplier & B2B Commerce", href: "#supplier" },
+      { label: "Commerce Technology", href: "#technology" },
+    ],
+  },
+  { label: "About", href: "#about" },
+  { label: "Operations", href: "#operations" },
+  { label: "Partnerships", href: "#partnerships" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
-    <header className={styles.header}>
-      <div className={styles.navContainer}>
-        <div className={styles.navPill}>
-          {/* Logo */}
-          <Link href="/" className={styles.logo}>
-            <div className={styles.logoIconWrapper} style={{ background: 'transparent', padding: 0 }}>
-              <img src="/logo.png" alt="Everlegit Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'contain' }} />
-            </div>
-            <span>Everlegit</span>
-          </Link>
-
-          {/* Desktop Links */}
-          <nav className={styles.desktopNav}>
-            <Link href="#services">Services</Link>
-            <Link href="#about">About Us</Link>
-            <Link href="#case-studies">Case Studies</Link>
-            <Link href="#contact">Contact</Link>
-          </nav>
-
-          {/* Actions */}
-          <div className={styles.actions}>
-            {mounted && (
-              <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle Theme">
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
-            )}
-            <Link href="/dashboard" className="btn btn-ghost" style={{ padding: '0.5rem 1rem' }}>Client Portal</Link>
-            <Link href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Get a Quote</Link>
-            
-            <button className={styles.mobileToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+      <div className={styles.inner}>
+        {/* Logo */}
+        <Link href="/" className={styles.logo}>
+          <div className={styles.logoMark}>
+            <img
+              src="/logo.png"
+              alt="EverLegit"
+              width={28}
+              height={28}
+              style={{ objectFit: "contain", borderRadius: "6px" }}
+            />
           </div>
+          <span className={styles.logoText}>EverLegit</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className={styles.desktopNav}>
+          {NAV_LINKS.map((link) =>
+            link.children ? (
+              <div
+                key={link.label}
+                className={styles.dropdownWrapper}
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
+                <button className={styles.navLink}>
+                  {link.label}
+                  <ChevronDown size={14} className={dropdownOpen ? styles.chevronOpen : ""} />
+                </button>
+                {dropdownOpen && (
+                  <div className={styles.dropdown}>
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        className={styles.dropdownItem}
+                        onClick={() => setDropdownOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link key={link.label} href={link.href} className={styles.navLink}>
+                {link.label}
+              </Link>
+            )
+          )}
+        </nav>
+
+        {/* Actions */}
+        <div className={styles.actions}>
+          <Link href="/dashboard" className={`${styles.portalBtn}`}>
+            <Globe size={15} />
+            Client Portal
+          </Link>
+          <Link href="#contact" className={styles.ctaBtn}>
+            Request Consultation
+          </Link>
+          <button
+            className={styles.mobileToggle}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <div className={styles.mobileMenuInner}>
-            <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-            <Link href="#case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-          </div>
+      <div className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ""}`}>
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.label}
+            href={link.href}
+            className={styles.mobileLink}
+            onClick={() => setMobileOpen(false)}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <div className={styles.mobileCtas}>
+          <Link href="/dashboard" className={`btn btn-outline`} onClick={() => setMobileOpen(false)}>
+            Client Portal
+          </Link>
+          <Link href="#contact" className={`btn btn-primary`} onClick={() => setMobileOpen(false)}>
+            Request Consultation
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }
