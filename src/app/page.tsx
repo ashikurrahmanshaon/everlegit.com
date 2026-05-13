@@ -232,7 +232,7 @@ export default function HomePage() {
               <Link href="/about" className={`btn btn-outline`}>
                 Explore Marketplace Solutions
               </Link>
-              <Link href="/contact" className={`btn btn-ghost`} style={{ color: "rgba(255,255,255,0.55)" }}>
+              <Link href="/contact" className={`btn btn-ghost`}>
                 Contact Business Operations
               </Link>
             </div>

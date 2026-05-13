@@ -194,7 +194,7 @@ export default function PartnershipsPage() {
                 {["8+ years of enterprise experience", "500+ active global partners", "Dedicated partner success managers", "Custom integration & API support", "Flexible revenue sharing models"].map((item) => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" }}>
                     <CheckCircle2 size={16} style={{ color: "#00A99D", flexShrink: 0 }} />
-                    <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", fontWeight: 500 }}>{item}</span>
+                    <span style={{ color: "var(--foreground-muted)", fontSize: "0.9rem", fontWeight: 500 }}>{item}</span>
                   </div>
                 ))}
               </div>

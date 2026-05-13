@@ -84,7 +84,7 @@ export default function CareersPage() {
               </div>
             ))}
           </div>
-          <p style={{ textAlign: "center", marginTop: "2.5rem", color: "rgba(255,255,255,0.35)", fontSize: "0.875rem" }}>
+          <p style={{ textAlign: "center", marginTop: "2.5rem", color: "var(--foreground-muted)", fontSize: "0.875rem" }}>
             Don&apos;t see a fit?{" "}
             <Link href="mailto:careers@everlegit.com" style={{ color: "#00A99D", fontWeight: 600 }}>
               Send us your resume

@@ -237,11 +237,11 @@ export default function AboutPage() {
                   </div>
                   <div style={{ flex: 1, minWidth: "220px" }}>
                     <div style={{ color: "var(--emerald)", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>01</div>
-                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Marketplace Infrastructure Systems</h3>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--foreground)", marginBottom: "0.75rem" }}>Marketplace Infrastructure Systems</h3>
                     <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Professional marketplace technologies designed to support scalable multi-vendor ecommerce ecosystems and enterprise commerce operations.</p>
                     <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
                       {["Vendor management systems","Supplier portals","Marketplace analytics","Product operation systems","Commerce workflow management","Administration dashboards"].map(f => (
-                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--foreground-muted)", fontSize: "0.875rem" }}>
                           <ChevronRight size={13} style={{ color: "var(--emerald)", flexShrink: 0 }} />{f}
                         </li>
                       ))}
@@ -262,11 +262,11 @@ export default function AboutPage() {
                   </div>
                   <div style={{ flex: 1, minWidth: "220px" }}>
                     <div style={{ color: "#0066cc", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>02</div>
-                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Enterprise Ecommerce Solutions</h3>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--foreground)", marginBottom: "0.75rem" }}>Enterprise Ecommerce Solutions</h3>
                     <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Scalable ecommerce systems supporting modern online commerce operations and digital business growth.</p>
                     <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
                       {["Ecommerce platform systems","Inventory operations","Order management","Commerce automation","Customer management tools","Product distribution workflows"].map(f => (
-                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--foreground-muted)", fontSize: "0.875rem" }}>
                           <ChevronRight size={13} style={{ color: "#0066cc", flexShrink: 0 }} />{f}
                         </li>
                       ))}
@@ -287,11 +287,11 @@ export default function AboutPage() {
                   </div>
                   <div style={{ flex: 1, minWidth: "220px" }}>
                     <div style={{ color: "#7c3aed", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>03</div>
-                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Supplier &amp; B2B Commerce Operations</h3>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--foreground)", marginBottom: "0.75rem" }}>Supplier &amp; B2B Commerce Operations</h3>
                     <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Integrated supplier management and B2B commerce infrastructure supporting efficient operational ecosystems.</p>
                     <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
                       {["Supplier onboarding","Wholesale systems","Vendor communications","B2B commerce workflows","Distribution operations","Supplier performance management"].map(f => (
-                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--foreground-muted)", fontSize: "0.875rem" }}>
                           <ChevronRight size={13} style={{ color: "#7c3aed", flexShrink: 0 }} />{f}
                         </li>
                       ))}
@@ -312,11 +312,11 @@ export default function AboutPage() {
                   </div>
                   <div style={{ flex: 1, minWidth: "220px" }}>
                     <div style={{ color: "#f59e0b", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>04</div>
-                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Commerce Technology Infrastructure</h3>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--foreground)", marginBottom: "0.75rem" }}>Commerce Technology Infrastructure</h3>
                     <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Enterprise-grade technology systems supporting secure, scalable, and optimized digital commerce environments.</p>
                     <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
                       {["API integrations","Cloud infrastructure","Secure business systems","Operational monitoring","Enterprise automation","Commerce analytics infrastructure"].map(f => (
-                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--foreground-muted)", fontSize: "0.875rem" }}>
                           <ChevronRight size={13} style={{ color: "#f59e0b", flexShrink: 0 }} />{f}
                         </li>
                       ))}
