@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   Building2, Globe, Shield, TrendingUp, Users, Award,
   CheckCircle2, ArrowRight, Network, Zap, Star,
-  BarChart3, Target, Heart,
+  BarChart3, Target, Heart, Layers, Server, Cpu, ChevronRight,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import styles from "./about.module.css";
@@ -216,6 +216,119 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Solutions ── */}
+      <section className="section">
+        <div className="container">
+          <AnimatedSection direction="up">
+            <div className="text-center">
+              <div className="section-label"><Layers size={12} />Core Solutions</div>
+              <h2 className="section-title">Our Infrastructure &amp; Commerce Solutions</h2>
+              <p className="section-subtitle">Enterprise-grade systems built for modern global commerce.</p>
+            </div>
+          </AnimatedSection>
+
+          {/* Marketplace Infrastructure */}
+          <div id="marketplace" style={{ scrollMarginTop: "90px", marginTop: "4rem" }}>
+            <AnimatedSection direction="left">
+              <div className="enterprise-card" style={{ padding: "2.5rem", marginBottom: "2rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1.5rem", flexWrap: "wrap" }}>
+                  <div style={{ background: "rgba(0,169,157,0.1)", border: "1px solid rgba(0,169,157,0.25)", borderRadius: "12px", padding: "1rem", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Layers size={28} style={{ color: "var(--emerald)" }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: "220px" }}>
+                    <div style={{ color: "var(--emerald)", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>01</div>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Marketplace Infrastructure Systems</h3>
+                    <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Professional marketplace technologies designed to support scalable multi-vendor ecommerce ecosystems and enterprise commerce operations.</p>
+                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
+                      {["Vendor management systems","Supplier portals","Marketplace analytics","Product operation systems","Commerce workflow management","Administration dashboards"].map(f => (
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                          <ChevronRight size={13} style={{ color: "var(--emerald)", flexShrink: 0 }} />{f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Enterprise Ecommerce */}
+          <div id="ecommerce" style={{ scrollMarginTop: "90px" }}>
+            <AnimatedSection direction="right" delay={0.1}>
+              <div className="enterprise-card" style={{ padding: "2.5rem", marginBottom: "2rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1.5rem", flexWrap: "wrap" }}>
+                  <div style={{ background: "rgba(0,102,204,0.1)", border: "1px solid rgba(0,102,204,0.25)", borderRadius: "12px", padding: "1rem", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Server size={28} style={{ color: "#0066cc" }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: "220px" }}>
+                    <div style={{ color: "#0066cc", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>02</div>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Enterprise Ecommerce Solutions</h3>
+                    <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Scalable ecommerce systems supporting modern online commerce operations and digital business growth.</p>
+                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
+                      {["Ecommerce platform systems","Inventory operations","Order management","Commerce automation","Customer management tools","Product distribution workflows"].map(f => (
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                          <ChevronRight size={13} style={{ color: "#0066cc", flexShrink: 0 }} />{f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Supplier & B2B */}
+          <div id="supplier" style={{ scrollMarginTop: "90px" }}>
+            <AnimatedSection direction="left" delay={0.1}>
+              <div className="enterprise-card" style={{ padding: "2.5rem", marginBottom: "2rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1.5rem", flexWrap: "wrap" }}>
+                  <div style={{ background: "rgba(124,58,237,0.1)", border: "1px solid rgba(124,58,237,0.25)", borderRadius: "12px", padding: "1rem", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Users size={28} style={{ color: "#7c3aed" }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: "220px" }}>
+                    <div style={{ color: "#7c3aed", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>03</div>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Supplier &amp; B2B Commerce Operations</h3>
+                    <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Integrated supplier management and B2B commerce infrastructure supporting efficient operational ecosystems.</p>
+                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
+                      {["Supplier onboarding","Wholesale systems","Vendor communications","B2B commerce workflows","Distribution operations","Supplier performance management"].map(f => (
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                          <ChevronRight size={13} style={{ color: "#7c3aed", flexShrink: 0 }} />{f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Commerce Technology */}
+          <div id="technology" style={{ scrollMarginTop: "90px" }}>
+            <AnimatedSection direction="right" delay={0.1}>
+              <div className="enterprise-card" style={{ padding: "2.5rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1.5rem", flexWrap: "wrap" }}>
+                  <div style={{ background: "rgba(245,158,11,0.1)", border: "1px solid rgba(245,158,11,0.25)", borderRadius: "12px", padding: "1rem", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Cpu size={28} style={{ color: "#f59e0b" }} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: "220px" }}>
+                    <div style={{ color: "#f59e0b", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>04</div>
+                    <h3 style={{ fontFamily: "var(--font-manrope)", fontWeight: 800, fontSize: "1.5rem", color: "var(--white)", marginBottom: "0.75rem" }}>Commerce Technology Infrastructure</h3>
+                    <p style={{ color: "var(--foreground-muted)", lineHeight: 1.8, marginBottom: "1.25rem" }}>Enterprise-grade technology systems supporting secure, scalable, and optimized digital commerce environments.</p>
+                    <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.5rem" }}>
+                      {["API integrations","Cloud infrastructure","Secure business systems","Operational monitoring","Enterprise automation","Commerce analytics infrastructure"].map(f => (
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "rgba(255,255,255,0.7)", fontSize: "0.875rem" }}>
+                          <ChevronRight size={13} style={{ color: "#f59e0b", flexShrink: 0 }} />{f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* ── Timeline ── */}
       <section className={`section ${styles.timelineSection}`}>
         <div className="container">
@@ -265,7 +378,7 @@ export default function AboutPage() {
                 <Link href="/contact" className="btn btn-primary" style={{ fontSize: "1rem", padding: "1rem 2rem" }}>
                   Request Enterprise Consultation <ArrowRight size={17} />
                 </Link>
-                <Link href="/#solutions" className="btn btn-outline" style={{ fontSize: "1rem", padding: "1rem 2rem" }}>
+                <Link href="/about#marketplace" className="btn btn-outline" style={{ fontSize: "1rem", padding: "1rem 2rem" }}>
                   Explore Solutions
                 </Link>
               </div>

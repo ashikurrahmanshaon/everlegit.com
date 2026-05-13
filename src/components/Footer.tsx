@@ -5,14 +5,14 @@ import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
   Solutions: [
-    { label: "Marketplace Infrastructure", href: "/#marketplace" },
-    { label: "Enterprise Ecommerce", href: "/#ecommerce" },
-    { label: "Supplier & B2B Commerce", href: "/#supplier" },
-    { label: "Commerce Technology", href: "/#technology" },
+    { label: "Marketplace Infrastructure", href: "/about#marketplace" },
+    { label: "Enterprise Ecommerce", href: "/about#ecommerce" },
+    { label: "Supplier & B2B Commerce", href: "/about#supplier" },
+    { label: "Commerce Technology", href: "/about#technology" },
   ],
   Company: [
     { label: "About EverLegit", href: "/about" },
-    { label: "Operations", href: "/#operations" },
+    { label: "Operations", href: "/about" },
     { label: "Partnerships", href: "/partnerships" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },

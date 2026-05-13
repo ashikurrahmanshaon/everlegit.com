@@ -7,6 +7,8 @@ import {
   ArrowRight, Clock, MapPin, Phone, Send,
   CheckCircle2, Zap,
 } from "lucide-react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import styles from "./contact.module.css";
 
@@ -72,9 +74,17 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("loading");
-    // Simulate form submission
-    await new Promise(r => setTimeout(r, 1800));
-    setFormState("success");
+    try {
+      await addDoc(collection(db, "contact_submissions"), {
+        ...formData,
+        submittedAt: serverTimestamp(),
+        source: "everlegit.com",
+      });
+      setFormState("success");
+    } catch (err) {
+      console.error("Firestore error:", err);
+      setFormState("error");
+    }
   };
 
   return (
@@ -107,7 +117,18 @@ export default function ContactPage() {
                   <p className={styles.formSub}>We'll get back to you within 1–2 business days.</p>
                 </div>
 
-                {formState === "success" ? (
+                {formState === "error" ? (
+                  <div className={styles.successState}>
+                    <div className={styles.successIcon} style={{ color: "#ef4444" }}>⚠️</div>
+                    <h3 className={styles.successTitle}>Submission Failed</h3>
+                    <p className={styles.successDesc}>
+                      There was an issue sending your message. Please email us directly at <strong>operations@everlegit.com</strong>.
+                    </p>
+                    <button className="btn btn-outline" onClick={() => setFormState("idle")}>
+                      Try Again
+                    </button>
+                  </div>
+                ) : formState === "success" ? (
                   <div className={styles.successState}>
                     <div className={styles.successIcon}><CheckCircle2 size={40} /></div>
                     <h3 className={styles.successTitle}>Message Received!</h3>

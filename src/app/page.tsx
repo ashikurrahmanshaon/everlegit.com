@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   Shield,
@@ -224,16 +225,16 @@ export default function HomePage() {
 
             {/* CTAs */}
             <div className={styles.heroCtas}>
-              <a href="#contact" className={`btn btn-primary ${styles.heroCtaPrimary}`}>
+              <Link href="/contact" className={`btn btn-primary ${styles.heroCtaPrimary}`}>
                 Request Enterprise Consultation
                 <ArrowRight size={17} />
-              </a>
-              <a href="#solutions" className={`btn btn-outline`}>
+              </Link>
+              <Link href="/about" className={`btn btn-outline`}>
                 Explore Marketplace Solutions
-              </a>
-              <a href="#contact" className={`btn btn-ghost`} style={{ color: "rgba(255,255,255,0.55)" }}>
+              </Link>
+              <Link href="/contact" className={`btn btn-ghost`} style={{ color: "rgba(255,255,255,0.55)" }}>
                 Contact Business Operations
-              </a>
+              </Link>
             </div>
 
             {/* Trust indicators */}
@@ -440,10 +441,10 @@ export default function HomePage() {
                 designed to help businesses manage modern online operations efficiently across global
                 markets.
               </p>
-              <a href="#contact" className="btn btn-primary">
+              <Link href="/partnerships" className="btn btn-primary">
                 Explore Global Partnerships
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </div>
 
             <div className={styles.globalRight}>
@@ -598,13 +599,13 @@ export default function HomePage() {
               </p>
             </div>
             <div className={styles.partnershipRight}>
-              <a href="#contact" className={`btn btn-primary ${styles.partnerCtaBtn}`}>
+              <Link href="/partnerships" className={`btn btn-primary ${styles.partnerCtaBtn}`}>
                 Become a Partner
                 <ArrowRight size={17} />
-              </a>
-              <a href="#contact" className={`btn btn-outline`}>
+              </Link>
+              <Link href="/contact" className={`btn btn-outline`}>
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -666,13 +667,13 @@ export default function HomePage() {
               and operational technologies designed for serious business growth.
             </p>
             <div className={styles.ctaButtons}>
-              <a href="mailto:operations@everlegit.com" className={`btn btn-primary ${styles.ctaPrimaryLarge}`}>
+              <Link href="/contact" className={`btn btn-primary ${styles.ctaPrimaryLarge}`}>
                 Request Enterprise Consultation
                 <ArrowRight size={18} />
-              </a>
-              <a href="#solutions" className={`btn btn-outline`}>
+              </Link>
+              <Link href="/about" className={`btn btn-outline`}>
                 View All Solutions
-              </a>
+              </Link>
             </div>
           </div>
         </div>

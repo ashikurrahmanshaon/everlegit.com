@@ -14,12 +14,12 @@ import styles from "./Navbar.module.css";
 const NAV_LINKS = [
   {
     label: "Solutions",
-    href: "/",
+    href: "/about",
     children: [
-      { label: "Marketplace Infrastructure", href: "/#marketplace", icon: Layers, desc: "Multi-vendor commerce ecosystems" },
-      { label: "Enterprise Ecommerce", href: "/#ecommerce", icon: Server, desc: "Scalable ecommerce systems" },
-      { label: "Supplier & B2B Commerce", href: "/#supplier", icon: Users, desc: "Supplier & B2B operations" },
-      { label: "Commerce Technology", href: "/#technology", icon: Cpu, desc: "API & cloud infrastructure" },
+      { label: "Marketplace Infrastructure", href: "/about#marketplace", icon: Layers, desc: "Multi-vendor commerce ecosystems" },
+      { label: "Enterprise Ecommerce", href: "/about#ecommerce", icon: Server, desc: "Scalable ecommerce systems" },
+      { label: "Supplier & B2B Commerce", href: "/about#supplier", icon: Users, desc: "Supplier & B2B operations" },
+      { label: "Commerce Technology", href: "/about#technology", icon: Cpu, desc: "API & cloud infrastructure" },
     ],
   },
   {
@@ -70,10 +70,8 @@ export default function Navbar() {
   };
 
   const isActive = (href: string) => {
-    if (href === "/" || href === "/#marketplace" || href === "/#ecommerce" || href === "/#supplier" || href === "/#technology") {
-      return pathname === "/";
-    }
-    return pathname.startsWith(href);
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href.split("#")[0]);
   };
 
   return (
