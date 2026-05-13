@@ -15,15 +15,15 @@ export function AnimatedSection({
   className = "",
   delay = 0,
   direction = "up",
-  threshold = 0.1,
+  threshold = 0.08,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const transforms: Record<string, string> = {
-    up: "translateY(40px)",
-    left: "translateX(-40px)",
-    right: "translateX(40px)",
-    fade: "scale(0.95)",
+    up: "translateY(28px)",
+    left: "translateX(-28px)",
+    right: "translateX(28px)",
+    fade: "scale(0.97)",
   };
 
   useEffect(() => {
@@ -32,17 +32,19 @@ export function AnimatedSection({
 
     el.style.opacity = "0";
     el.style.transform = transforms[direction];
-    el.style.transition = `opacity 0.7s cubic-bezier(0.4,0,0.2,1) ${delay}s, transform 0.7s cubic-bezier(0.4,0,0.2,1) ${delay}s`;
+    // Faster, crisper transition — 0.5s feels snappy vs 0.7s sluggish
+    el.style.transition = `opacity 0.5s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${delay}s`;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           el.style.opacity = "1";
-          el.style.transform = direction === "fade" ? "scale(1)" : "translateX(0) translateY(0)";
+          el.style.transform = direction === "fade" ? "scale(1)" : "none";
           observer.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -60px 0px" }
+      // Removed the -60px rootMargin so elements animate as soon as they enter view
+      { threshold, rootMargin: "0px 0px -20px 0px" }
     );
 
     observer.observe(el);

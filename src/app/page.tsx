@@ -177,7 +177,7 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
     );
     revealRefs.current.forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
@@ -186,8 +186,8 @@ export default function HomePage() {
   const addReveal = (el: HTMLElement | null) => {
     if (el && !revealRefs.current.includes(el)) {
       el.style.opacity = "0";
-      el.style.transform = "translateY(32px)";
-      el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1)";
       revealRefs.current.push(el);
     }
   };

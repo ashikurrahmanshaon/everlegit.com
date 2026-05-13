@@ -53,7 +53,7 @@
   z-index: 1;
   max-width: 720px;
   padding: 4rem 0;
-  animation: fadeUp 0.7s ease both;
+  animation: fadeUp 0.45s ease both;
 }
 
 @keyframes fadeUp {
@@ -155,7 +155,7 @@
   border: 1px solid rgba(15,23,42,0.09);
   border-radius: 20px;
   padding: 2rem;
-  transition: all 0.35s ease;
+  transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(15,23,42,0.05);

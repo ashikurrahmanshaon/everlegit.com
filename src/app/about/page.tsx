@@ -35,17 +35,18 @@ const STATS = [
 ];
 
 function CountUp({ end, suffix, isYear, isDecimal }: { end: number; suffix: string; isYear?: boolean; isDecimal?: boolean }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(isYear ? end : 0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (isYear) return; // shown immediately
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true;
-        const duration = 1800;
+        const duration = 1200;
         const startTime = performance.now();
         const animate = (now: number) => {
           const progress = Math.min((now - startTime) / duration, 1);
@@ -58,14 +59,14 @@ function CountUp({ end, suffix, isYear, isDecimal }: { end: number; suffix: stri
         requestAnimationFrame(animate);
         obs.disconnect();
       }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.15 });
     obs.observe(el);
     return () => obs.disconnect();
-  }, [end, isDecimal]);
+  }, [end, isDecimal, isYear]);
 
-  const display = isYear ? (count === 0 ? "—" : count) : isDecimal ? count.toFixed(1) : count;
+  const display = isDecimal ? count.toFixed(1) : count;
 
-  return <span ref={ref}>{display}{count > 0 ? suffix : ""}</span>;
+  return <span ref={ref}>{display}{suffix}</span>;
 }
 
 export default function AboutPage() {
