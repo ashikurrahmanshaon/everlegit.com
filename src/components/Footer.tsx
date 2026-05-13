@@ -5,17 +5,17 @@ import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
   Solutions: [
-    { label: "Marketplace Infrastructure", href: "#marketplace" },
-    { label: "Enterprise Ecommerce", href: "#ecommerce" },
-    { label: "Supplier & B2B Commerce", href: "#supplier" },
-    { label: "Commerce Technology", href: "#technology" },
+    { label: "Marketplace Infrastructure", href: "/#marketplace" },
+    { label: "Enterprise Ecommerce", href: "/#ecommerce" },
+    { label: "Supplier & B2B Commerce", href: "/#supplier" },
+    { label: "Commerce Technology", href: "/#technology" },
   ],
   Company: [
-    { label: "About EverLegit", href: "#about" },
-    { label: "Operations", href: "#operations" },
-    { label: "Partnerships", href: "#partnerships" },
-    { label: "Careers", href: "#careers" },
-    { label: "Contact", href: "#contact" },
+    { label: "About EverLegit", href: "/about" },
+    { label: "Operations", href: "/#operations" },
+    { label: "Partnerships", href: "/partnerships" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
   ],
   "Trust & Legal": [
     { label: "Business Verification", href: "/verification" },
